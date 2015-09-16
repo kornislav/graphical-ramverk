@@ -1,3 +1,15 @@
+#include <windows.h>
+
+#if (defined(__cplusplus) && __cplusplus == 201103L) || (defined(_MSC_VER) && _MSC_VER >= 1800)
+#define CPP11 1 // the compiler has support for C++11
+#endif
+
+#ifdef _EXPORT
+#define EXPORT __declspec(dllexport)
+#else
+#define EXPORT __declspec(dllimport)
+#endif
+
 namespace grv
 {
 	// Integer typedefs
