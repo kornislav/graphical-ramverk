@@ -3,11 +3,11 @@ project("grv")
 	kind "SharedLib"
 	language "C++"
 	files {
-		"code/**.c",
-		"code/**.cpp",
-		"code/**.h",
-		"code/**.hpp",
-		"code/**.inl",
+		"grv/**.c",
+		"grv/**.cpp",
+		"grv/**.h",
+		"grv/**.hpp",
+		"grv/**.inl",
 	}
 
 	targetdir "%{prj.location}../bin/"

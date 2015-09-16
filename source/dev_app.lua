@@ -2,11 +2,11 @@ project("dev_app")
 	kind "WindowedApp"
 	language "C++"
 	files {
-		"code/**.c",
-		"code/**.cpp",
-		"code/**.h",
-		"code/**.hpp",
-		"code/**.inl",
+		"dev_app/**.c",
+		"dev_app/**.cpp",
+		"dev_app/**.h",
+		"dev_app/**.hpp",
+		"dev_app/**.inl",
 	}
 
 	targetdir "%{prj.location}../bin/"
