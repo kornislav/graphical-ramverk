@@ -15,6 +15,8 @@ x64/
 build/
 [Bb]in/*.exe
 [Bb]in/*.dll
+[Bb]in/*.lib
+[Bb]in/*.exp
 [Oo]bj/
 
 # MSTest test Results
@@ -47,7 +49,7 @@ build/
 *.sln
 *.vcxproj
 *.vcxproj.user
-*.vcxproj.filter
+*.vcxproj.filters
 
 # Visual C++ cache files
 ipch/
