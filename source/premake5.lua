@@ -10,5 +10,7 @@ solution(PRODUCT_NAME)
 		"Final"
 	}
 
+	startproject "dev_app"
+
 	require 'engine'
 	require 'dev_app'
