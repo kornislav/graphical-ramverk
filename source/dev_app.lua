@@ -16,7 +16,8 @@ project("dev_app")
 
 	includedirs {
 		"%{prj.location}",
-		"%{prj.location}/dev_app"
+		"%{prj.location}/dev_app",
+		"%{prj.location}/grv"
 	}
 
 	libdirs {
