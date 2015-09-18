@@ -3,7 +3,7 @@
 
 BOOL WINAPI DllMain(HINSTANCE handle, DWORD, LPVOID)
 {
-	grv::Core::Initialize(handle);
+	grv::Core::Init(handle);
 
 	return TRUE;
 }
