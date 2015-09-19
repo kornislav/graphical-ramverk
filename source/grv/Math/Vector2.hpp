@@ -1,16 +1,17 @@
 #pragma once
 
 #include <System.hpp>
+#include "Math.hpp"
 
 namespace grv
 {
 	class v2
 	{
 	public:
-		v2();
-		v2(const f32 scalar)			: x(scalar), y(scalar) {}
-		v2(const f32 X, const f32 Y)	: x(X), y(Y) {}
-		v2(const v2& in)				: x(in.x), y(in.y) {}
+		v2() : x(0), y(0) {}
+		v2(const f32 scalar) : x(scalar), y(scalar) {}
+		v2(const f32 X, const f32 Y) : x(X), y(Y) {}
+		v2(const v2& in) : x(in.x), y(in.y) {}
 
 		~v2();
 
@@ -282,15 +283,39 @@ namespace grv
 			f32 length = this->Magnitude();
 			return v2(x / length, y / length);
 		}
+		
+		// Static functions
+		static v2 One(){ return v2(1.0f); }
+		static v2 Zero(){ return v2(0.0f); }
+		static v2 Up(){ return v2(0.0f, 1.0f); }
+		static v2 Down(){ return v2(0.0f, -1.0f); }
+		static v2 Right(){ return v2(1.0f, 0.0f); }
+		static v2 Left(){ return v2(-1.0f, 0.0f); }
 
-		void Lerp(const v2& start, const v2& end, const f32 fraction);
-		void LerpUnclamped(const v2& start, const v2& end, const f32 fraction);
+		static v2 Clamp(const v2& value, const v2& min, const v2& max)
+		{
+			return v2((value.x < min.x) ? min.x : (value.x > max.x) ? max.x : value.x, (value.y < min.y) ? min.y : (value.y > max.y) ? max.y : value.y);
+		}
 
+		static v2 Lerp(const v2& start, const v2& end, const f32 fraction)
+		{
+			return Clamp(start + (end - start) * fraction, start, end);
+		}
 
+		static v2 LerpUnclamped(const v2& start, const v2& end, const f32 fraction)
+		{
+			return start + (end - start) * fraction;
+		}
+		
+		static v2 Coserp(const v2& start, const v2& end, const f32 fraction)
+		{
+			return Lerp(start, end, cos(fraction * PI * 0.5f));
+		}
 
 	private:
 
 
 	};
+
 
 }
